@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+ <path>throttle.ac</path>
+
+<!-- Throttles -->
+
+ <animation>
+  <type>rotate</type>
+  <object-name>throttle</object-name>
+  <property>controls/engines/engine[0]/throttle</property>
+  <interpolation>
+   <entry>
+    <ind>0</ind>
+    <dep>30</dep>
+   </entry>
+   <entry>
+    <ind>1</ind>
+    <dep>-30</dep>
+   </entry>
+  </interpolation>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+  <animation>
+     <type>slider</type>
+     <object-name>throttle</object-name>
+     <action>
+       <binding>
+         <command>property-adjust</command>
+         <property>controls/engines/engine[0]/throttle</property>
+         <factor>-0.1</factor>
+         <min>0</min>
+         <max>1.0</max>                
+         <wrap>false</wrap>
+       </binding>
+     </action>
+   </animation>
+
+
+
+<!-- RPM levers -->
+
+ <animation>
+  <type>rotate</type>
+  <object-name>prop</object-name>
+  <property>controls/engines/engine[0]/propeller-pitch</property>
+  <interpolation>
+   <entry>
+    <ind>0</ind>
+    <dep>30</dep>
+   </entry>
+   <entry>
+    <ind>1</ind>
+    <dep>-30</dep>
+   </entry>
+  </interpolation>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
+  <animation>
+     <type>slider</type>
+     <object-name>prop</object-name>
+     <action>
+       <binding>
+         <command>property-adjust</command>
+         <property>controls/engines/engine[0]/propeller-pitch</property>
+         <factor>-0.1</factor>
+         <min>0</min>
+         <max>1.0</max>                
+         <wrap>false</wrap>
+       </binding>
+     </action>
+   </animation>
+
+</PropertyList>
+
+

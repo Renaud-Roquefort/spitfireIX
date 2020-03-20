@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+ <filter>
+    <name>Aileron heaviness</name>
+    <debug>false</debug>
+    <type>gain</type>
+    <gain>1.0</gain>
+    <input>
+      <expression>
+        <table>
+          <property>/velocities/airspeed-kt</property>
+          <entry><ind>0.0</ind><dep>1.0</dep></entry>
+          <entry><ind>140</ind><dep>1.0</dep></entry>
+          <entry><ind>400</ind><dep>0.0</dep></entry>
+        </table>
+      </expression>
+    </input>
+    <output>
+      <property>/controls/flight/heaviness/aileron</property>
+    </output>
+  </filter>
+  <filter>
+    <name>Aileron filter</name>
+    <debug>false</debug>
+    <type>gain</type>
+    <input>controls/flight/aileron</input>
+    <output>controls/flight/aileron-filtered</output>
+    <gain>
+      <prop>/controls/flight/heaviness/aileron</prop>
+      <value>1</value>
+    </gain>
+  </filter>
+
+ <filter>
+    <name>Elevator heaviness</name>
+    <debug>false</debug>
+    <type>gain</type>
+    <gain>1.0</gain>
+    <input>
+      <expression>
+        <table>
+          <property>/velocities/airspeed-kt</property>
+          <entry><ind>0.0</ind><dep>1.0</dep></entry>
+          <entry><ind>160</ind><dep>1.0</dep></entry>
+          <entry><ind>380</ind><dep>0.0</dep></entry>
+        </table>
+      </expression>
+    </input>
+    <output>
+      <property>/controls/flight/heaviness/elevator</property>
+    </output>
+  </filter>
+  <filter>
+    <name>Elevator filter</name>
+    <debug>false</debug>
+    <type>gain</type>
+    <input>controls/flight/elevator</input>
+    <output>controls/flight/elevator-filtered</output>
+    <gain>
+      <prop>/controls/flight/heaviness/elevator</prop>
+      <value>1</value>
+    </gain>
+  </filter>
+
+   <filter>
+    <name>Rudder heaviness</name>
+    <debug>false</debug>
+    <type>gain</type>
+    <gain>1.0</gain>
+    <input>
+      <expression>
+        <table>
+          <property>/velocities/airspeed-kt</property>
+          <entry><ind>0.0</ind><dep>1.0</dep></entry>
+          <entry><ind>160</ind><dep>1.0</dep></entry>
+          <entry><ind>380</ind><dep>0.0</dep></entry>
+        </table>
+      </expression>
+    </input>
+    <output>
+      <property>/controls/flight/heaviness/rudder</property>
+    </output>
+  </filter>
+  <filter>
+    <name>Rudder filter</name>
+    <debug>false</debug>
+    <type>gain</type>
+    <input>controls/flight/rudder</input>
+    <output>controls/flight/rudder-filtered</output>
+    <gain>
+      <prop>/controls/flight/heaviness/rudder</prop>
+      <value>1</value>
+    </gain>
+  </filter>
+</PropertyList>
